@@ -5,7 +5,8 @@ import fs from 'fs-extra'
 
 const resize_routes = express.Router()
 
-resize_routes.get('/', async (req, res) => {
+//sometimes it sends status with string and sometimes it sends file so I had to make it any
+resize_routes.get('/', async ( req: express.Request, res: express.Response) : Promise<any> => {
 	const imgName = req.query.img as string
 	const imgWidth = req.query.width as string
 	const imgHeight = req.query.height as string
