@@ -25,4 +25,3 @@ describe('Testing the query parameters', () => {
 		await request.get('/resize?img=flower&width=500&height=750').expect(200)
 	})
 })
-

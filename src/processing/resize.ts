@@ -6,7 +6,7 @@ async function resizeImage(
 	width: number,
 	height: number,
 	singleDimension: number
-) {
+): Promise<boolean> {
 	const source = `${path.resolve('./')}/assets/${imageName}.jpg`
 	switch (singleDimension) {
 		case 0:
@@ -40,8 +40,9 @@ async function resizeImage(
 				)
 			break
 		default:
-			break
+			return false
 	}
+	return true
 }
 
 export default resizeImage
